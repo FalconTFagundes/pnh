@@ -247,3 +247,20 @@ function sendToWhatsApp() {
   });
 }
 
+function sendToWhatsAppService(servico) {
+  const phoneNumber = "5533987067130";
+  const message = `Olá! Me interessei pelo serviço de ${servico} no espaço Preta Nails Hair e gostaria de saber mais informações.`;
+
+  Swal.fire({
+    icon: "success",
+    title: "Iniciando contato...",
+    text: "Redirecionando você para o WhatsApp",
+    timer: 1200,
+    showConfirmButton: false
+  }).then(() => {
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  });
+}
+
+
